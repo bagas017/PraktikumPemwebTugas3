@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Warung Parfum Bu Siti</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>Waroeng Perfume Bu Sitie</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Contact</a>
+      <a href="https://github.com/bagas017" target="_blank">Git</a>
+    </nav>
+  </header>
+
+  <main>
+    <container class="container">
+      <div class="productList">
+        <div class="product" id="product1">
+          <div class="productImg"><img src="Asset/produk1.jpg" alt="Produk 1" class="productImage"></div>
+          <div class="productName">GOLDEA</div>
+          <div class="productPrice">Rp. 1.000.000</div><br>
+          <div class="inputJumlah">
+            <div class="jumlah">
+              <div>
+                <label for="inputJumlahP1">Quantity: </label>
+                <input type="number" min="0" id="inputJumlahP1" value="0">
+              </div>
+              <button onclick="addProductToCart(0, 'inputJumlahP1')"><img src="Asset/cart.svg" class="cartIcon" alt="cartIcon"></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product" id="product2">
+          <div class="productImg"><img src="Asset/produk2.jpg" alt="Produk 2" class="productImage"></div>
+          <div class="productName">SAUVAGE</div>
+          <div class="productPrice">Rp. 1.500.000</div><br>
+          <div class="inputJumlah">
+            <div class="jumlah">
+              <div>
+                <label for="inputJumlahP2">Quantity: </label>
+                <input type="number" min="0" id="inputJumlahP2" value="0">
+              </div>
+              <button onclick="addProductToCart(1, 'inputJumlahP2')"><img src="Asset/cart.svg" class="cartIcon" alt="cartIcon"></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product" id="product3">
+          <div class="productImg"><img src="Asset/produk3.jpg" alt="Produk 3" class="productImage"></div>
+          <div class="productName">COCO CHANEL</div>
+          <div class="productPrice">Rp. 3.000.000</div><br>
+          <div class="inputJumlah">
+            <div class="jumlah">
+              <div>
+                <label for="inputJumlahP3">Quantity: </label>
+                <input type="number" min="0" id="inputJumlahP3" value="0">
+              </div>
+              <button onclick="addProductToCart(2, 'inputJumlahP3')"><img src="Asset/cart.svg" class="cartIcon" alt="cartIcon"></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product" id="product4">
+          <div class="productImg"><img src="Asset/produk4.jpg" alt="Produk 4" class="productImage"></div>
+          <div class="productName">VILLORESI</div>
+          <div class="productPrice">Rp. 2.000.000</div><br>
+          <div class="inputJumlah">
+            <div class="jumlah">
+              <div>
+                <label for="inputJumlahP4">Quantity: </label>
+                <input type="number" min="0" id="inputJumlahP4" value="0">
+              </div>
+              <button onclick="addProductToCart(3, 'inputJumlahP4')"><img src="Asset/cart.svg" class="cartIcon" alt="cartIcon"></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product" id="product5">
+          <div class="productImg"><img src="Asset/produk5.jpg" alt="Produk 5" class="productImage"></div>
+          <div class="productName">Maison des Senteurs</div>
+          <div class="productPrice">Rp. 500.000</div><br>
+          <div class="inputJumlah">
+            <div class="jumlah">
+              <div>
+                <label for="inputJumlahP5">Quantity: </label>
+                <input type="number" min="0" id="inputJumlahP5" value="0">
+              </div>
+              <button onclick="addProductToCart(4, 'inputJumlahP5')"><img src="Asset/cart.svg" class="cartIcon" alt="cartIcon"></button>
+            </div>
+          </div>
+        </div>
+        
+        <div class="product" id="product6">
+          <div class="productImg"><img src="Asset/produk6.jpg" alt="Produk 6" class="productImage"></div>
+          <div class="productName">PRADA</div>
+          <div class="productPrice">Rp. 750.000</div><br>
+          <div class="inputJumlah">
+            <div class="jumlah">
+              <div>
+                <label for="inputJumlahP6">Quantity: </label>
+                <input type="number" min="0" id="inputJumlahP6" value="0">
+              </div>
+              <button onclick="addProductToCart(5, 'inputJumlahP6')"><img src="Asset/cart.svg" class="cartIcon" alt="cartIcon"></button>
+            </div>
+          </div>
+        </div>   
+      </div>
+      
+      <div class="cart">
+        <div class="cartProductList">
+          <h2>Product Order List</h2>
+          <table id="cartTable">
+            <thead>
+              <tr>
+                <th>Product Name</th>
+                <th>Quantity</th>
+                <th>Price per Item</th>
+                <th>Subtotal</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="cartItems">
+              <tr>
+                <td>-</td>
+                <td>-</td>
+                <td>Rp 0.00</td>
+                <td>Rp 0.00</td>
+                <td>-</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      
+        <div class="totalBelanja">
+          <h3>ORDER SUMMARY</h3>
+          <div class="containerTotalBelanja">
+            <p>Subtotal: Rp <span id="subtotal">0</span></p><hr>
+            <p>Diskon: <span id="discount">0%</span></p><hr>
+            <p>Total: Rp <span id="total">0</span></p><hr>
+          </div>
+
+          <button class="checkoutBtn">Checkout</button>
+        </div>
+      </div>
+    </container> 
+  
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 Waroeng Bu Sitie. Design by <i>BAGAS</i></p>
+  </footer>
+  
+  <script src="index.js"></script>
+</body>
+</html>
